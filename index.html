@@ -1,83 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
 
 </head>
-<body>
+<body ng-controller="myController">
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+   			 <div class="navbar-header">
+    			  <a class="navbar-brand" href="#">Dank Coding Memes</a>
+    		</div>
+    		<ul class="nav navbar-nav">
+		      <li class="active"><a href="#">Home</a></li>
+		      <li><a href="#">CSS Hate</a></li>
+		      <li><a href="#">jQuery Love</a></li> 
+		      <li><a href="#">Angular Gallery</a></li> 
+   			 </ul>
+  		</div>
+	</nav>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-left">
-				<h1>Thumbnail Gallery</h1>
+				<h1>Angular Gallery</h1>
 			</div>
 		</div>
 		<hr>
 <div class="row">
-	<div class="col-lg-3 col-md-4 col-xs-6">
+	<div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="image in images track by $index">
+		<!-- {{images.src}} {{images.name}} -->
 		<div class="text-center" >
-			<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
+			<!-- <img  ng-src="http://placehold.it/400x300" class="img-thumbnail img-responsive" data-toggle="modal" data-target="#myModal"> -->
+			<img ng-src="{{image.src}}" class="img-thumbnail img-responsive" data-toggle="modal" data-target="#myModal">
 		</div>
-	</div>
-
-	
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
-
-
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
-
-
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
+		<div class="image-text text-center">{{image.name}}</div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Stop hating me Angular.js
+</button>
 
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <!--  <img src="frontmagic.png"> -->
+    <!--     <img src="http://placehold.it/400x300"> -->
+    <img src="ng-image.jpg">
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close Window</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
-
-
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
+<hr>
+	<p class="text-left">Copyright &copy; 2016</p>
 </div>
-<div class="row">
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
 
 
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
 
-
-	<div class="col-lg-3 col-md-4 col-xs-6">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
-
-
-	<div class="col-lg-6 col-md-8 col-xs-10">
-		<img  src="http://placehold.it/400x300" class="img-thumbnail img-responsive">
-	</div>
-</div>
-</div>		
 </body>
 </html>
